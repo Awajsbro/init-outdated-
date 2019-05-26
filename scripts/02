@@ -1,0 +1,7 @@
+#! /bin/bash
+
+sudo apt update > update_script.log
+sudo apt upgrade >> update_script.log
+sudo cp update_script.log /var/log/.
+sudo chmod 777 /etc/crontab
+echo '0 4	* * 0	root	~/project/init/scripts/02' >> /etc/crontab

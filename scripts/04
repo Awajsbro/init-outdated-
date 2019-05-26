@@ -1,0 +1,9 @@
+#! /bin/bash
+
+MAIL="awajsbro@student.42.fr"
+
+md5sum -c sum 2> /dev/null
+if [ "$echo $?" = "1" ]; then
+    md5sum /etc/crontab > sum
+    echo "il y a eu un  changement " | mail ${MAIL}
+fi
